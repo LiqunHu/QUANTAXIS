@@ -1,6 +1,7 @@
 
 # Self-defined ignore
-
+_data_/
+_notebooks_/
 *.pyc
 node_modules/
 .vscode/
@@ -21,7 +22,8 @@ node_modules/
 QA_*.html
 test/
 *lock.json
-
+docs
+record.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
@@ -35,7 +37,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-
+_build
 develop-eggs/
 eggs/
 .eggs/
@@ -150,3 +152,16 @@ kernel*.json
 
 # sqlite database
 *.db
+
+
+*.dad
+*.cover
+
+#future connections
+
+*.con
+/QUANTAXIS_Test/QAFetch_Test/data/
+*.sqlite_db
+
+selenium_driver/*
+QUANTAXIS_WEBDRIVER/*

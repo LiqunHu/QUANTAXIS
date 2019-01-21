@@ -23,7 +23,6 @@
 # SOFTWARE.
 
 from QUANTAXIS.QAUtil import DATABASE
-
 """对于账户的增删改查(QAACCOUNT/QAUSER/QAPORTFOLIO)
 """
 
@@ -38,8 +37,7 @@ def save_account(message, collection=DATABASE.account):
         collection {[type]} -- [description] (default: {DATABASE})
     """
 
-    collection.save(message)
-
+    collection.insert(message)
 
 
 def update_account(mes, collection=DATABASE.account):
@@ -55,5 +53,7 @@ def update_account(mes, collection=DATABASE.account):
     collection.find_one_and_update({'account_cookie': mes['account_cookie']})
 
 
-def save_riskanalysis(message,collection=DATABASE.risk):
-    collection.save(message)
+def save_riskanalysis(message, collection=DATABASE.risk):
+    #print(message)
+
+    collection.insert(message)
