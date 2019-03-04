@@ -30,6 +30,9 @@ Quantitative Financial FrameWork
 ![main_1](http://pic.yutiansut.com/Main_1.gif)
 ![presentbyyutiansut](http://pic.yutiansut.com/yutiansut-logo.png)
 
+## QUANTAXIS 祝大家 2019 新年快乐~ 猪事如意
+![](http://pic.yutiansut.com/quantaxis-2019newyear.png)
+
 ![version](https://img.shields.io/pypi/v/quantaxis.svg)
 ![build](https://travis-ci.org/QUANTAXIS/QUANTAXIS.svg?branch=master)
 [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/quantaxis/QUANTAXIS%2FQUANTAXIS%2FQUANTAXIS?branch=master&key=eyJhbGciOiJIUzI1NiJ9.NWEzMGMwNzE4NTk5YzAwMDAxNWEzOGQ3.INF0oVNGLK79Ql3f10Vs9_CJfwsfq1FYjCbbOKJzBe8&type=cf-1)]( https://g.codefresh.io/pipelines/QUANTAXIS/builds?repoOwner=QUANTAXIS&repoName=QUANTAXIS&serviceName=QUANTAXIS%2FQUANTAXIS&filter=trigger:build~Build;branch:master;pipeline:5c3ade3fc67fe4e3328c9da1~QUANTAXIS)
@@ -96,8 +99,11 @@ QUANTAXIS量化金融策略框架,是一个面向中小型策略团队的量化�
         - [1.5 回测服务](#15-回测服务)
             - [1.5.1 股票/日内t0/ 的日线/分钟线级别回测](#151-股票日内t0-的日线分钟线级别回测)
         - [1.6 实盘](#16-实盘)
-            - [1.6.1 股票(实盘易)](#161-股票实盘易)
-            - [1.6.2 期货(python3 CTP win/mac/linux)](#162-期货python3-ctp-winmaclinux)
+            - [1.6.1 股票/实盘易 QAShiPaneBroker](#161-股票-实盘易--qashipanebroker)
+            - [1.6.2 股票/TTS    QATTSBroker](#162-股票-tts----qattsbroker)
+            - [1.6.3 期货/Open-trade-gateway QAOTGBROKER](#163-期货--qaotgbroker)
+            - [1.6.4 期货/海风AT  QA_ATBroker](#164-期货--海风at封装-qaatbroker)
+            - [1.6.5 期货/VNPY   QAVNPYBroker](#165-期货-vnpy-qavnpybroker)
         - [1.7 网站HTTP服务](#17-网站http服务)
             - [1.7.1 网站后台标准化接口](#171-网站后台标准化接口)
     - [2. 文档](#2-文档)
@@ -187,22 +193,34 @@ QUANTAXIS量化金融策略框架,是一个面向中小型策略团队的量化�
 
 ### 1.6 实盘
 
-#### 1.6.1 股票(实盘易)
+#### 1.6.1 (股票) 实盘易  QAShipaneBroker
+
 
 实盘易插件 参见[实盘易](http://www.iguuu.com/e?x=18839)
 
 实盘易安装注意 参见[安装注意](shipane_install_memo.md)
 
-#### 1.6.2 期货(python3 CTP win/mac/linux)
+####  1.6.2 (股票) TTS    QATTSBroker
 
-1. CTP 的websocket交易 :  simnow demo:  ws://www.yutiansut.com:7988
-2. CTP 的海风broker魔改封装:  [QA_AtBroker](https://github.com/QUANTAXIS/QA_AtBroker)
+具体参见[QATTSBroker](QUANTAXIX/QAMARKET/QATTSBroker.py)
 
+#### 1.6.3 (期货)  QAOtgBroker
+
+CTP 的websocket交易 :  simnow demo:  ws://www.yutiansut.com:7988
 
 关于websocket交易(可能存在一些不确定的bug 因此暂时不开放):
 
 - 目前仅提供demo/ 模拟盘接入
 - 具体需要私聊我 yutiansut@qq.com
+
+#### 1.6.4 (期货)  海风AT封装 QAAtBroker
+CTP 的海风broker魔改封装:  [QA_AtBroker](https://github.com/QUANTAXIS/QA_AtBroker)
+
+
+#### 1.6.5 (期货) VNPY QAVNPYBroker
+
+目前等VNPY 2.0的横空出世, 兼容py3.6/3.7后将进行对接
+
 
 
 ### 1.7 网站HTTP服务(目前已经独立为 QUANTAXIS_WEBSERVICE)
@@ -342,12 +360,13 @@ QUANTAXIS-Stardand-Protocol 版本号0.0.8
 
 ### 期货开户
 ```
-即日起, 中财期货,瑞龙期货 和QUANTAXIS达成协议, 使用quantaxis的量化期货交易者，
+即日起到春节前, 中财期货,瑞龙期货 和QUANTAXIS达成协议, 使用quantaxis的量化期货交易者，
 
 - 交易所内返80%(无论资金规模)
 - 每月直接返还到交易账户
 - 没有中间商赚差价
 - 手续费是 交易所+1分
+
 - 享受一次quantaxis期货环境部署远程指导[带行情带下单](看心情)
 
 
@@ -358,8 +377,9 @@ QUANTAXIS-Stardand-Protocol 版本号0.0.8
 ```
 股票开户给出两个选择:
 1. 长城国瑞证券 万1.2 无五元手续费 (目前还没谈到万1) (联系 QQ 2961725743 备注 from quantaxis)
-2. 海通证券 万1 无五元手续费 (联系 QQ 2961725743 备注 from quantaxis)
-3. 财通证券 万1.2 无五元手续费 (联系QQ 2939048292 备注 from quantaxis)
+2. 财通证券 万1.2 无五元手续费 (联系QQ 2939048292 备注 from quantaxis)
+3. 财通证券 万1.2 无五元手续费(送开户大礼包 行情/书籍自选一样) (联系QQ 373566682 备注 from quantaxis)
+
 - 享受一次quantaxis股票环境部署远程指导[带行情带下单](看心情)
 
 上述均无资金规模限制 
